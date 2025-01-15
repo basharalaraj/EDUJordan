@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grade Tracker</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+
+body, html 
+{
+            height: 100%;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f8f9fa;
+}
+
+header 
+{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: black;
+    padding: 10px 0; 
+    text-align: center;
+    z-index: 1000;
+}
+
+nav ul 
+{
+    list-style-type: none; 
+    padding: 0;
+    margin: 0; 
+    display: flex; 
+    justify-content: center; 
+}
+
+nav ul li 
+{
+    margin: 0 15px;
+}
+
+nav ul li a 
+{
+    color: white; 
+    text-decoration: none; 
+    font-weight: bold; 
+    padding: 8px 15px; 
+    display: block; 
+    border-radius: 4px; 
+    transition: background-color 0.3s ease, transform 0.2s ease; 
+}
+
+nav ul li a:hover 
+{
+    background-color: #333;
+}
+
+
+
+
+.container 
+{
+    max-width: 400px;
+    width: 100%;
+}
+
+.result 
+{
+    margin-top: 20px;
+    padding: 15px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+}
+
+.logo
+{
+    font-size: 20px;
+    color: white;
+    text-decoration: none;
+}
+
+.Sd
+{
+    color: red;
+}
+
+.f2
+{
+    color:rgba(0, 0, 0, 0.6);
+    font-size: 12px;
+    text-align:left;
+    position:fixed;
+    bottom: 0;
+}
+.datetime 
+{
+    font-size: 16px;
+    color: #ffffff;
+    margin-top: 8px;
+}
+    </style>
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    
+    <header> <nav>  
+        <ul>
+          <a href="/" class="logo"><span class="Sd">EDU</span>Jordan</a>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="courses.html">Courses</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="success.html">Success Stories</a></li>
+          <li><a href="resources.html">Resources Library</a></li>
+          <div class="datetime" id="datetime"></div>
+          </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1 class="text-center mb-4">Grade calculator</h1>
+        <form id="gc">
+            <div class="mb-3">
+                <label for="score" class="form-label">Score:</label>
+                <input type="number" class="form-control" id="score" placeholder="Your grade" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Total Score:</label>
+                <input type="number" class="form-control" id="total" placeholder="Total grade" required>
+            </div>
+            
+            <button type="button" class="btn btn-primary w-100" onclick="calculateGrade()">Calculate Grade</button>
+        </form>
+
+        <div id="result" class="result mt-4" style="display: none;"></div>
+    </div>
+
+    <script>
+function calculateGrade() 
+{
+    const score = parseFloat(document.getElementById('score').value);
+    const total = parseFloat(document.getElementById('total').value);
+            
+    if (isNaN(score) || isNaN(total) || total <= 0) 
+{
+    alert("Please enter valid scores.");
+        return;
+}
+
+    const percentage = (score / total) * 100;
+    let grade = "";
+
+    if (percentage >= 90) 
+{
+    grade = "A (Excellent)";
+} 
+    else if (percentage >= 80) 
+{
+                grade = "B (Good)";
+} 
+    else if (percentage >= 70) 
+{
+    grade = "C (Average)";
+} 
+    else if (percentage >= 60) 
+{
+    grade = "D (Pass)";
+} 
+    else 
+{
+    grade = "F (Fail)";
+}
+
+    document.getElementById('result').innerHTML = 
+    ` 
+        <strong>Grade Details:</strong><br>
+        Score: ${score} / ${total}<br>
+        Percentage: ${percentage.toFixed(2)}%<br>
+        Grade: ${grade}<br>
+    `;
+    document.getElementById('result').style.display = "block";
+}
+        
+function displayDateTime() 
+{
+    var now = new Date();
+    var year = now.getFullYear();
+    var month = ("0" + (now.getMonth() + 1)).slice(-2); 
+    var day = ("0" + now.getDate()).slice(-2);  
+    var hours = ("0" + now.getHours()).slice(-2);  
+    var minutes = ("0" + now.getMinutes()).slice(-2);  
+    var dateTimeString = `${year}-${month}-${day} ${hours}:${minutes}`;
+    document.getElementById('datetime').textContent = dateTimeString;
+}
+
+displayDateTime()
+
+    </script>
+
+    <footer class="f2">
+        <div><p>&copy; 2025 EDUJordan</p></div> 
+    </footer>
+
+</body>
+</html>
