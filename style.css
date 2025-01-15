@@ -1,0 +1,170 @@
+
+#carouselExample 
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; 
+}
+  
+  .carousel-item img 
+  {
+    width: 100%;
+    height: 100vh; 
+    object-fit: cover;
+  }
+  
+  .logo
+  {
+      font-size: 20px;
+      color: white;
+      text-decoration: none;
+  }
+  
+  .Sd
+  {
+      color: red;
+     
+  }
+
+
+body 
+{
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color:#f8f9fa;
+}
+
+  
+header 
+{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: black;
+    padding: 10px 0; 
+    text-align: center;
+    z-index: 1000;
+}
+
+nav ul 
+{
+    list-style-type: none; 
+    padding: 0;
+    margin: 0; 
+    display: flex; 
+    justify-content: center; 
+}
+
+nav ul li 
+{
+    margin: 0 15px;
+}
+
+nav ul li a 
+{
+    color: white; 
+    text-decoration: none; 
+    font-weight: bold; 
+    padding: 8px 15px; 
+    display: block; 
+    border-radius: 4px; 
+    transition: background-color 0.3s ease, transform 0.2s ease; 
+}
+
+nav ul li a:hover 
+{
+    background-color: #333;
+}
+
+   
+main  
+{
+    background-color: rgba(0, 0, 0, 0.150);
+    font-size: 27px;
+    color:white;
+    text-align: center;
+    margin: 250px;
+}
+  
+main a
+{
+    color: white;
+    background-color:paleturquoise;
+    text-decoration: none;
+    border-radius: 5px;
+    padding: 10px; 
+}
+  
+   
+
+.f1
+{
+    color:rgba(255, 255, 255, 0.6);
+    font-size: 12px;
+    text-align:left;
+    position:fixed;
+    bottom: 0;
+}
+
+
+
+/*________________________________________________________________________________________________________________________________________________*/
+/*________________________________________________________________________________________________________________________________________________*/
+/*________________________________________________________________________________________________________________________________________________*/
+/*________________________________________________________________________________________________________________________________________________*/
+ 
+
+.f2
+{
+    color:rgba(0, 0, 0, 0.6);
+    font-size: 12px;
+    text-align:left;
+    position:fixed;
+    bottom: 0;
+}
+
+body .a3
+{
+    background-color:black;
+    font-size: 30px;
+    display: block; 
+    text-align: center;
+    text-decoration: none;
+    color:white;
+    transition: 0.3s ease-in-out;
+
+}
+.a3:hover{background-color: red;}
+
+
+.card img
+{
+height: 260px;
+object-fit: cover;
+width: 415px;
+}
+
+.container
+{
+    margin-top: 40px;
+}
+
+/****/
+.btn-outline-secondary {
+    background-color: black; 
+    color: white; 
+    border-color: red; 
+}
+.btn-outline-secondary:hover {
+    background-color: red;
+}
+.datetime 
+{
+    font-size: 16px;
+    color: #ffffff;
+    margin-top: 8px;
+}
